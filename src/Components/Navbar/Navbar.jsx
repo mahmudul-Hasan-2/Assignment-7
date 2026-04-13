@@ -12,7 +12,7 @@ const Navbar = () => {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "btn bg-green-700 text-base font-bold text-white"
+              ? "btn bg-green-900 text-base font-bold text-white"
               : "btn btn-ghost text-base font-bold text-[#64748B]"
           }
           to="/"
@@ -24,7 +24,7 @@ const Navbar = () => {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "btn bg-green-700 text-base font-bold text-white"
+              ? "btn bg-green-900 text-base font-bold text-white"
               : "btn btn-ghost text-base font-bold text-[#64748B]"
           }
           to="/timeline"
@@ -36,7 +36,7 @@ const Navbar = () => {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "btn bg-green-700 text-base font-bold text-white"
+              ? "btn bg-green-900 text-base font-bold text-white"
               : "btn btn-ghost text-base font-bold text-[#64748B]"
           }
           to="/stats"
