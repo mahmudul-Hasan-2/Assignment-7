@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BiMessageDots, BiTrash, BiVideo } from "react-icons/bi";
 import { FiPhoneCall } from "react-icons/fi";
 import { PiArchiveDuotone } from "react-icons/pi";
 import { RiNotificationSnoozeLine } from "react-icons/ri";
 import { useLoaderData, useParams } from "react-router";
+import { HandlingContext } from "../../Context/Context";
 
 const FriendDetails = () => {
+  const { handleCall, handleText, handleVideo } = useContext(HandlingContext);
   const { friendId } = useParams();
   const friends = useLoaderData();
   const friend = friends.find((friend) => friend.id == friendId);
@@ -66,15 +68,19 @@ const FriendDetails = () => {
       <div className="w-full lg:w-[70%] space-y-6">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="px-4 py-8 text-center shadow-lg rounded-lg">
-            <h2 className="text-[30px]">{friend.days_since_contact}</h2>
+            <h2 className="text-[30px] font-semibold">
+              {friend.days_since_contact}
+            </h2>
             <span className="text-gray-500">days since contact</span>
           </div>
           <div className="px-4 py-8 text-center shadow-lg rounded-lg">
-            <h2 className="text-[30px]">{friend.goal}</h2>
+            <h2 className="text-[30px] font-semibold">{friend.goal}</h2>
             <span className="text-gray-500">Goal (Days)</span>
           </div>
           <div className="px-4 py-8 text-center shadow-lg rounded-lg">
-            <h2 className="text-[30px]">{friend.next_due_date}</h2>
+            <h2 className="text-[30px] font-semibold">
+              {friend.next_due_date}
+            </h2>
             <span className="text-gray-500">Next Due</span>
           </div>
         </div>
@@ -92,20 +98,29 @@ const FriendDetails = () => {
             </h1>
           </div>
         </div>
-        <div className="w-full p-6 space-y-4">
+        <div className="w-full p-6 space-y-4 shadow-lg rounded-lg">
           <h2 className="text-[20px] text-[#244D3F]">Quick Check-In</h2>
           <div className="flex flex-col lg:flex-row items-center gap-4 w-full">
-            <button className="btn h-23.75 flex-col w-full lg:w-[33.3%] bg-[#F8FAFC] ">
+            <button
+              onClick={() => handleCall(friend)}
+              className="btn h-25 flex-col w-full lg:w-[32.2%] bg-[#F8FAFC] "
+            >
               <FiPhoneCall size={40} />
               <span>Call</span>
             </button>
-            <button className="btn h-23.75 flex-col w-full lg:w-[33.3%] bg-[#F8FAFC] ">
-              <BiMessageDots size={40}></BiMessageDots>
-              <span>Call</span>
+            <button
+              onClick={() => handleText(friend)}
+              className="btn h-25 flex-col w-full lg:w-[32.2%] bg-[#F8FAFC] "
+            >
+              <BiMessageDots size={40} />
+              <span>Text</span>
             </button>
-            <button className="btn h-23.75 flex-col w-full lg:w-[33.3%] bg-[#F8FAFC] ">
-              <BiVideo size={40}></BiVideo>
-              <span>Call</span>
+            <button
+              onClick={() => handleVideo(friend)}
+              className="btn h-25 flex-col w-full lg:w-[32%] bg-[#F8FAFC] "
+            >
+              <BiVideo size={40} />
+              <span>Video</span>
             </button>
           </div>
         </div>

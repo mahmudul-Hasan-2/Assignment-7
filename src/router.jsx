@@ -5,6 +5,7 @@ import HomePage from "./Components/HomePage/HomePage";
 import TimeLine from "./Components/TimeLine/TimeLine";
 import Stats from "./Components/Stats/Stats";
 import FriendDetails from "./Components/FriendDetails/FriendDetails";
+import NotFound from "./Components/NotFound/NotFound";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
         element: <FriendDetails></FriendDetails>,
       },
     ],
+  },
+  {
+    path: "*",
+    element: <NotFound></NotFound>,
   },
 ]);
 
