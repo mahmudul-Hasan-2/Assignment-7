@@ -4,6 +4,7 @@ import { BiHome, BiMenu } from "react-icons/bi";
 import { Link, NavLink } from "react-router";
 import { CgLock } from "react-icons/cg";
 import { BsClock } from "react-icons/bs";
+import { FaChartLine } from "react-icons/fa";
 
 const Navbar = () => {
   const items = (
@@ -41,7 +42,8 @@ const Navbar = () => {
           }
           to="/stats"
         >
-          <BsClock></BsClock> Stats
+          <FaChartLine />
+          Stats
         </NavLink>
       </li>
     </>

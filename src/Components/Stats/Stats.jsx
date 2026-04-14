@@ -1,14 +1,14 @@
 import { Legend, Pie, PieChart, Tooltip } from "recharts";
 import { useContext } from "react";
-import { InstalledContext } from "@/Components/InstallationContext/InstallationContext";
+import { HandlingContext } from "../../Context/Context";
 
 const DashboardPage = () => {
-  const { calls, texts, videos } = useContext(InstalledContext);
+  const { calls, texts, videos } = useContext(HandlingContext);
 
   const data = [
-    { name: "Calls", value: calls.length, fill: "#0088FE" },
-    { name: "Texts", value: texts.length, fill: "#FF8042" },
-    { name: "Videos", value: videos.length, fill: "#FF8042" },
+    { name: "Texts", value: texts.length, fill: "#7E35E1" },
+    { name: "Calls", value: calls.length, fill: "#244D3F" },
+    { name: "Videos", value: videos.length, fill: "#37A163" },
   ];
 
   return (
