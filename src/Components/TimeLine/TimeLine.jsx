@@ -3,14 +3,12 @@ import { HandlingContext } from "../../Context/Context";
 import callImage from "../../assets/call.png";
 import textImage from "../../assets/text.png";
 import videoImage from "../../assets/video.png";
+import { FiAlertTriangle } from "react-icons/fi";
 
 const TimeLine = () => {
   const { timeLine } = useContext(HandlingContext);
   const [filteredCard, setFilteredCard] = useState(timeLine);
   const [value, setValue] = useState("");
-  // useEffect(() => {
-  //   setFilteredCard(timeLine);
-  // }, [timeLine]);
   const handleSorting = (e) => {
     setValue(() => e.target.value);
     if (e.target.value === "call") {
@@ -45,6 +43,22 @@ const TimeLine = () => {
         <option value="text">Text</option>
         <option value="video">Video</option>
       </select>
+      {filteredCard.length === 0 && (
+        <div className="flex min-h-[300px] w-full flex-col items-center justify-center p-4 text-center">
+          <div className="animate-in fade-in zoom-in duration-500">
+            <FiAlertTriangle className="mx-auto mb-6 text-6xl text-yellow-500 transition-all hover:scale-110 sm:text-8xl md:text-9xl" />
+
+            <h2 className="mb-2 text-2xl font-bold text-gray-800 md:text-4xl">
+              No History Found!!
+            </h2>
+
+            <p className="max-w-xs text-sm text-gray-500 md:max-w-md md:text-lg">
+              We couldn't find any data matching your filter. Please try a
+              different timeline or check back later.
+            </p>
+          </div>
+        </div>
+      )}
       <div className="space-y-4">
         {filteredCard.map((t, i) => {
           return (

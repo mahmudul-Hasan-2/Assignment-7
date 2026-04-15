@@ -5,6 +5,7 @@ import { PiArchiveDuotone } from "react-icons/pi";
 import { RiNotificationSnoozeLine } from "react-icons/ri";
 import { useLoaderData, useParams } from "react-router";
 import { HandlingContext } from "../../Context/Context";
+import { toast } from "react-toastify";
 
 const FriendDetails = () => {
   const friends = useLoaderData();
@@ -16,6 +17,7 @@ const FriendDetails = () => {
       name: friend.name,
       date: friend.next_due_date,
     };
+    toast.success(`${dataFormat.type} with ${dataFormat.name}`);
     setTimeLine([...timeLine, dataFormat]);
   };
   const friend = friends.find((friend) => friend.id == friendId);
