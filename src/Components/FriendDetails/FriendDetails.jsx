@@ -7,9 +7,17 @@ import { useLoaderData, useParams } from "react-router";
 import { HandlingContext } from "../../Context/Context";
 
 const FriendDetails = () => {
-  const { handleCall, handleText, handleVideo } = useContext(HandlingContext);
-  const { friendId } = useParams();
   const friends = useLoaderData();
+  const { setTimeLine, timeLine } = useContext(HandlingContext);
+  const { friendId } = useParams();
+  const interaction = (friend, type) => {
+    const dataFormat = {
+      type: type,
+      name: friend.name,
+      date: friend.next_due_date,
+    };
+    setTimeLine([...timeLine, dataFormat]);
+  };
   const friend = friends.find((friend) => friend.id == friendId);
   return (
     <div className="w-full flex flex-col lg:flex-row gap-6 container mx-auto my-20 px-2">
@@ -102,21 +110,21 @@ const FriendDetails = () => {
           <h2 className="text-[20px] text-[#244D3F]">Quick Check-In</h2>
           <div className="flex flex-col lg:flex-row items-center gap-4 w-full">
             <button
-              onClick={() => handleCall(friend)}
+              onClick={() => interaction(friend, "call")}
               className="btn h-25 flex-col w-full lg:w-[32.2%] bg-[#F8FAFC] "
             >
               <FiPhoneCall size={40} />
               <span>Call</span>
             </button>
             <button
-              onClick={() => handleText(friend)}
+              onClick={() => interaction(friend, "text")}
               className="btn h-25 flex-col w-full lg:w-[32.2%] bg-[#F8FAFC] "
             >
               <BiMessageDots size={40} />
               <span>Text</span>
             </button>
             <button
-              onClick={() => handleVideo(friend)}
+              onClick={() => interaction(friend, "video")}
               className="btn h-25 flex-col w-full lg:w-[32%] bg-[#F8FAFC] "
             >
               <BiVideo size={40} />
