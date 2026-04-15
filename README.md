@@ -1,12 +1,20 @@
-# React + Vite
+# 👥 KeenKeeper — Keep Your Friendships Alive
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+KeenKeep is a unique platform designed to ensure your most important connections never fade away. In an era where we are often too busy to "keep in touch," KeenKeep acts as the bridge that reconnects you with the people who matter most.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🚀 Key Technologies
 
-## Expanding the ESLint configuration
+- **Frontend Core:** ![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black) ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=flat&logo=react-router&logoColor=white)
+- **Styling & UI:** ![Tailwind](https://img.shields.io/badge/Tailwind-38B2AC?style=flat&logo=tailwind-css&logoColor=white) ![DaisyUI](https://img.shields.io/badge/DaisyUI-512BD4?style=flat)
+- **Data & Charts:** ![Recharts](https://img.shields.io/badge/Recharts-22B5BF?style=flat)
+- **Components:** React Icons, React Spinners
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+# Features
+
+- Here available all Friends card.
+- Here have a call, text, and video history section.
+- Here have a chart about all call, text, and video history.

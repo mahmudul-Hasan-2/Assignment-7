@@ -16,7 +16,7 @@ const DashboardPage = () => {
 
   return (
     <div className="container mx-auto  my-20 space-y-6 px-2">
-      <h2 className="text-5xl font-bold">Friendship Analytics</h2>
+      <h2 className="text-2xl sm:text-5xl font-bold">Friendship Analytics</h2>
       <div className=" shadow p-10 rounded-md space-y-6 border border-slate-300">
         <h2 className="font-semibold text-[20px ] mb-16 text-start">
           By Interaction Type
