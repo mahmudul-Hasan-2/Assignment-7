@@ -9,6 +9,17 @@ const TimeLine = () => {
   const { timeLine } = useContext(HandlingContext);
   const [filteredCard, setFilteredCard] = useState(timeLine);
   const [value, setValue] = useState("");
+  const [text, setText] = useState("");
+  const handleOnChange = (e) => {
+    setText(e.target.value);
+  };
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const searchedCard = filteredCard.filter((t) =>
+      t.name.toLowerCase().includes(text.toLowerCase()),
+    );
+    setFilteredCard(searchedCard);
+  };
   const handleSorting = (e) => {
     setValue(() => e.target.value);
     if (e.target.value === "call") {
@@ -30,19 +41,38 @@ const TimeLine = () => {
   };
   console.log(filteredCard);
   console.log(value);
+  console.log(text);
   return (
     <div className="container mx-auto px-2 my-20">
       <h2 className="text-5xl text-[#1F2937] font-bold">Timeline</h2>
-      <select
-        defaultValue="Filter timeline"
-        onChange={handleSorting}
-        className="select my-6 shadow"
-      >
-        <option>Filter timeline</option>
-        <option value="call">Call</option>
-        <option value="text">Text</option>
-        <option value="video">Video</option>
-      </select>
+      <div className="flex items-center justify-between  flex-wrap">
+        <select
+          defaultValue="Filter timeline"
+          onChange={handleSorting}
+          className="select mt-6 mb-0 shadow"
+        >
+          <option>Filter timeline</option>
+          <option value="call">Call</option>
+          <option value="text">Text</option>
+          <option value="video">Video</option>
+          <option value="">Text</option>
+          <option value="video">Video</option>
+        </select>
+        <div className="flex items-center">
+          <input
+            type="text"
+            placeholder="Search timeline..."
+            className="input my-6 w-full shadow rounded-r-none rounded-lg  focus:outline-none"
+            onChange={handleOnChange}
+          />
+          <button
+            className="btn my-6 rounded-l-none rounded-lg"
+            onClick={handleSearch}
+          >
+            Search
+          </button>
+        </div>
+      </div>
       {filteredCard.length === 0 && (
         <div className="flex min-h-[300px] w-full flex-col items-center justify-center p-4 text-center">
           <div className="animate-in fade-in zoom-in duration-500">

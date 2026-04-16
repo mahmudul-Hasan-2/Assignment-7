@@ -18,3 +18,32 @@ KeenKeep is a unique platform designed to ensure your most important connections
 - Here available all Friends card.
 - Here have a call, text, and video history section.
 - Here have a chart about all call, text, and video history.
+
+---
+
+## 💻 Installation Guide
+
+Follow these instructions to set up the **Client-Side** locally.
+
+### 1. Prerequisites
+
+Ensure you have **Node.js (v18+)** installed.
+
+### 2. Clone the Repositories
+
+```
+git clone https://github.com/mahmudul-Hasan-2/Assignment-7
+cd Assignment-7
+```
+
+### 3. Install Dependencies
+
+```
+npm install
+```
+
+### 4. Launch Development
+
+```
+npm run dev
+```
