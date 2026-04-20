@@ -30,6 +30,20 @@ const TimeLine = () => {
       let allTextCard = timeLine.filter((t) => t.type === "text");
       setFilteredCard(allTextCard);
       return;
+    } else if (e.target.value === "newest") {
+      let allTextCard = [...filteredCard].sort(
+        (a, b) => new Date(b.date) - new Date(a.date),
+      );
+      console.log(allTextCard);
+      setFilteredCard(allTextCard);
+      return;
+    } else if (e.target.value === "oldest") {
+      let allTextCard = [...filteredCard].sort(
+        (a, b) => new Date(a.date) - new Date(b.date),
+      );
+      console.log(allTextCard);
+      setFilteredCard(allTextCard);
+      return;
     } else if (e.target.value === "video") {
       let allVideoCard = timeLine.filter((t) => t.type === "video");
       setFilteredCard(allVideoCard);
@@ -55,8 +69,8 @@ const TimeLine = () => {
           <option value="call">Call</option>
           <option value="text">Text</option>
           <option value="video">Video</option>
-          <option value="">Text</option>
-          <option value="video">Video</option>
+          <option value="newest">Newest</option>
+          <option value="oldest">Oldest</option>
         </select>
         <div className="flex items-center">
           <input

@@ -49,7 +49,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="bg-base-100 shadow-sm">
+    <div className="bg-base-100 shadow-sm fixed flex items-center min-w-screen justify-between z-10">
       <div className="navbar px-4 container mx-auto">
         {/* LEFT (Logo) */}
         <div className="flex-1">
