@@ -27,7 +27,7 @@ Follow these instructions to set up the **Client-Side** locally.
 
 ### 1. Prerequisites
 
-Ensure you have **Node.js (v18+)** installed.
+Ensure you have **Node.js (v25.9.0)** installed.
 
 ### 2. Clone the Repositories
 
