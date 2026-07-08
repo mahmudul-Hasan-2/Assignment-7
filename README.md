@@ -21,7 +21,7 @@ KeenKeep is a unique platform designed to ensure your most important connections
 
 ---
 
-### Live Site: (Live site)[assignment-7-lyart.vercel.app]
+### 🔗 Live Site: [Live Site](https://assignment-7-lyart.vercel.app)
 
 ---
 
